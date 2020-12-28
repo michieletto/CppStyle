@@ -315,6 +315,16 @@ public class ClangFormatFormatter extends CodeFormatter {
 				if (conf.exists()) {
 					return conf.getAbsolutePath();
 				}
+				
+				conf = new File(dir, "config/.clang-format");
+				if (conf.exists()) {
+					return conf.getAbsolutePath();
+				}
+				
+				conf = new File(dir, "config/_clang-format");
+				if (conf.exists()) {
+					return conf.getAbsolutePath();
+				}
 			}
 
 			file = dir;
